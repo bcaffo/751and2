@@ -1,0 +1,73 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.752 Final exam} \\
+Notes:
+\begin{list}{$\bullet$}{}
+\item You may not use a calculator for this exam.
+\item Please be neat and write legibly. Use the back of the pages if necessary.
+\item Good luck!
+\end{list}
+\ \\ \ \\ \ \\ \ \\ \ \\
+ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+{\bf printed name}
+
+\newpage
+
+\noindent Define the following:
+\begin{enumerate}[Model $(1)$]
+	\item $Y = X_1 \beta_1 + \epsilon$.
+	\item $Y = X_1 \beta_1 + X_2 \beta_2 + \epsilon$.
+\end{enumerate}
+where $Y$ is $n\times 1$, $X_1$ is $n\times p_1$ and $X_2$ is $n\times p_2$.
+
+\begin{enumerate}[1.]
+\item Let $S_{(i)}^2$ be the residual variance estimate obtained from fitting Model $(i)$.
+\begin{enumerate}[A.]
+\item Given the expected value of $S_{(1)}^2$ and $S_{(2)}^2$ given that Model $(1)$ is true.
+\item Given the expected value of $S_{(1)}^2$ and $S_{(2)}^2$ given that Model $(2)$ is true.
+\item Suppose that Model $(1)$ is true. Show that the variance of $S_{(2)}^2$ is larger than
+that of $S_{(1)}^2$. (Hint, the variance of a Chi-Squared with $df$ degrees of freedom is $2df$.)
+\end{enumerate}
+
+\newpage
+
+\item Consider a linear model $Y = X\beta + \sum_{j=1}^J \delta_{i_j} \Delta_j + \epsilon$ where $\delta_{i_j}$ is an
+$n\times 1$ vector with a $1$ at position $i_j$ and $0$ elsewhere, $Y$ is $n\times 1$, and $X$ is $n \times p$. 
+\begin{enumerate}[A.]
+\item Fix $\beta$. Show that the least squares estimate of $\Delta_j$ is $(y_{i_j} - x_{i_j}' \beta)$ where
+$x_{i_j}$ is row $i_j$ from $X$ as a column vector.
+\item Given the prevous answer, prove that the $i_j$ residual from the least squares fit of this model (where $\beta$ is estimated and not held fixed) is $0$.
+\end{enumerate}
+
+\newpage
+\item Consider a model $E[Y_{i}] = f(x_i) = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3(x_i - k)_{+}^2 $ where
+$(a)_{+}$ is $a$ if $a > 0$ and $0$ otherwise and $k$ is a known knot point.
+\begin{enumerate}[A.]
+\item Show that $f$ is continous at point $k$.
+\item Show that $f$ has exactly one continuous derivative. 
+\end{enumerate}
+
+
+
+
+\end{enumerate}
+
+%\newpage
+
+
+
+\end{document}
+

@@ -1,0 +1,261 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+
+\begin{document}
+\noindent
+{\bf BST 140.751 \\ Problem Set 2} \\
+\section{Distributions}
+\begin{enumerate}[1.]
+\item In a random sample of $100$ subjects with low back pain, $27$
+  reported an improvement in symptoms after execise therapy. 
+  \begin{enumerate}[A.]
+  \item Give and interpret (in the comments) an interval estimate for the true
+    proportion of subjects who respond to exercise therapy.
+  \item Plot the likelihood for the true proportion of subjects with low back pain.
+  \item Plot the posterior and give equi-tail and HPD credible intervals.
+  \item Give the likelihood interval.
+  \end{enumerate}
+\item  Let $p$ denote the unknown proportion of rocks in a riverbed
+  that are sedimentary in type.  Suppose that $X = 12$ of a sample of
+  $n = 20$ rocks collected in random locations are found to be
+  sedimentary in type.
+\begin{enumerate}[A.]
+\item Plot the likelihood for the parameter $p$ and interpret.
+\item From your graphs, determine the value of $\hat{p}$ of $p$ where
+  the curve reaches its maximum.  Does this value for the maximum make
+ intuitive sense?  Comment in one or two sentences.
+\item Show that the point that maximizes the binomial likelihood is always $X/n$.
+\item Use the CLT to create a confidence interval for the true
+  proportion of rocks that are sedimentary. Interpret your results.
+\item A much larger study is planned and the researchers would like to
+  know how large $n$ should be to have a margin of error on the
+  estimate for the proportion of sedimentary rocks that is no larger
+  than $.01$ for a $95\%$ confidence interval? Use the fact that $p(1
+  - p) \leq 1/4$. Also try the calculation with the estimate of $p$
+  from the current study.
+\end{enumerate}
+\item Using a computer, generate $1000$ Binomial random variables for $n=10$ and $p =.3$ Calculate the percentage of times that 
+$$
+\hat p \pm 1.96\sqrt{\hat p (1 - \hat p) / n}
+$$
+contains the true value of p. Here $\hat p = X/n$ where $X$ is each
+binomial variable. Do the intervals appear to have the coverage that
+they are supposed to?
+\item Repeat the calculation only now use the interval
+$$
+\tilde p \pm 1.96\sqrt{\tilde p (1 - \tilde p) / n}
+$$
+where $\tilde p = (X + 2) / (n + 4)$. Does the coverage appear to be
+closer to .95?
+\item Repeat this comparison (parts a. - d.) for $p = .1$ and $p =
+  .5$. Which of the two intervals appears to perform better? 
+\item A statistic is called ``sufficient'' if the likelihood only depends on that statistic.
+	That is only if the likelihood of a parameter given the full data is proportional to 	
+	a likelihood only depending on the sufficient statistics.
+	\begin{enumerate}[A.]
+	\item Let $X_1,\ldots, X_n$ be iid Bernoulli($p$). What is the sufficient statistic for $p$?
+	\item Let $X_1,\ldots, X_n$ be iid Poisson($\mu$). What is the sufficient statistics for $\mu$?
+	\item Let $X_1,\ldots, X_n$ be iid Normal($\mu$, $\sigma^2)$. What is the sufficient statistics for $(\mu,\sigma^2)$. 
+	\item Let $X_1,\ldots, X_n$ be Uniform($\theta$, $\theta+1$). What is the sufficient statistic for $\theta$?
+	\item Let $X_1,\ldots, X_n$ be Gamma($\alpha$, $\beta$). What are the sufficient statistics for $\alpha$ and $\beta$?
+	\end{enumerate}
+\item Let $X_1,\ldots, X_n$ be iid. 
+\begin{enumerate}[A.]
+\item If $X_i \sim $Bernoulli($p$) then $Y = \sum_{i=1}^n$ is Binomial. Argue that the likelihoods using $\{X_i\}_{i=1}^n$ and $Y$ are equivalent. Do the MLEs agree? 
+\item If $X_i \sim $Poisson($\mu$) then $Y = \sum_{i=1}^n X_i$ is Poisson($n\mu$). Argue that the likelihoods using $\{X_i\}_{i=1}^n$ and $Y$ are equivalent. Do the MLEs agree?
+\item Why do the likelihoods and MLEs agree?
+\end{enumerate}	
+	\item Consider let $Y_i$ ($i=1,\ldots,I$) be iid discrete random variables that take the values
+	$1,\ldots, K$ with probabilities $p_k$ so that $0\leq p_k \leq 1$ and $\sum_{k=1}^K p_k = 1$.
+	Let $X_{ik} = 1$ if $Y = k$ and $0$ otherwise. 
+	Let $X_i = (X_{i1}, \ldots, X_{iK})$. $X_i$ is a multivariate Bernoulli with the Bernoulli distribution being the special case when $K=2$. 
+	\begin{enumerate}[A.]
+	\item Write out the likelihood for $(p_1, \ldots, p_k)$.
+	\item Argue that the sufficient statistics are $n_k = \sum_{i=1} X_{ik}$. 
+	\item Show that the ML estimate of $p_k$ is $n_k / n$. 
+	\item Derive the mass function for $n = (n_1,\ldots, n_k)$? 
+	(Hint: look it up; it's called the multinomial distribution.) 
+	\item Argue that the any collapsed subset is also multinomial. For example
+		$(n_1 + n_2, n_3, \ldots, n_k)$ is multinomial with probabilities $p_1 + p_2, p_3, \ldots, p_k$.
+	\end{enumerate}
+\item Let $X_1\ldots X_k$ be independent so that $X_k\sim$ Poisson($\mu_k$). Argue
+	That $(X_1, \ldots, X_k) ~|~ N = \sum_{k=1}^K X_k$ is multinomial with sample size
+	$N$ and probabilities $p_k = \mu_k / \sum_{l=1}^K \mu_l$.
+\item A profile likelihood for a two parameter likelihood, say ${\cal L}(\mu, \theta)$
+is the function $PL(\theta) = {\cal L}(\hat\mu(\theta), \theta)$ where $\hat \mu(\theta)$ is the
+ML estimate for $\mu$ with $\theta$ held fixed as if it were known. Conversely, the
+profile likelihood for $\mu$ is $PL(\mu) = {\cal L}(\mu, \hat \theta (\mu))$ where $\hat \theta (\mu)$
+is the ML estimate for $\theta$ with $\mu$ held fixed as if it were known.
+\begin{enumerate}[A.]
+\item Let $X_1,\ldots, X_N$ be iid N($\mu, \theta$). Calculate the profile likelihoods for $\theta$
+and $\mu$.
+\item Argue why it's called a ``profile'' likelihood.
+\item Argue that $\mbox{argmax}_\mu PL(\mu)$ is the ML estimate for $\mu$. (That is, the maximum of the profile likelihood is the maximum of the overall likelihod.)
+\end{enumerate}
+\item A large survey of over 100,000 births in South Wales during the period
+1956-1962 gave an incidence rate for spina bifida of 4.12 per
+1,000 births.  In a random sample of 1000 births, compute the
+probability of observing (i) no cases, (ii) one case, (iii) two
+cases.  Using the following two approaches
+\begin{enumerate}[A.]
+\item The exact distribution based on the binomial distribution
+\item Approximate probabilities based on a Poisson approximation to the binomial
+\end{enumerate}
+\end{enumerate}
+
+%\section{Bayesian statistics}
+%\begin{enumerate}
+%\item Let $X_1,\ldots, X_n ~|~ p$ be Bernoulli$(p)$ and $p \sim Beta(\alpha, \beta)$. Derive the posterior
+%  distribution and give its mean and variance.
+%\item Let $X_1,\ldots, X_n ~|~ \lambda$ be Poisson$(t_i\lambda)$ (respectively) and $\lambda \sim Gamma(\alpha, \beta)$.
+%  Derive the posterior distribution and give its mean and variance.
+%\item Let $n = (n_1,\ldots, n_k) | \theta = (\theta_1, \ldots, \theta_k)$ be multinomial$(N, \theta)$ and $\theta \sim Dirichlet(\alpha)$
+%where $\alpha = (\alpha_1,\ldots,\alpha_k)$. Derive the posterior for $theta$ and calculate its mean.
+%\item Let $X_1,\ldots, X_n ~|~ \mu, \sigma^2$ be iid Normal$(\mu, \sigma^2)$ and $\mu ~|~ \sigma^2 \sim Normal(\mu_0, \sigma^2 \tau)$
+%and $\sigma^{-2} \sim Gamma(\alpha, \beta)$. Derive the posterior for $(\mu,\sigma)$. 
+%\end{enumerate}
+%
+%% \section{Multivariate normal distribution}
+%% \begin{enumerate}[1.]
+%% \item 
+%% \end{enumerate}
+%
+%\section{The Delta method}
+%\begin{enumerate}[1.]
+%\item Assume the fact that if $X\sim$Poisson($\lambda t$) then 
+%  $\frac{X - \lambda t}{\sqrt{t\lambda}} \rightarrow N(0,1)$ for large $t$.
+%    \begin{enumerate}[A.]
+%    \item Use the delta method to calculate an interval for $\log(\lambda)$.
+%    \item Suppose that $Y \sim$ Poisson($\lambda_2 t_2$). Create a 
+%      confidence interval for $\log(\lambda / \lambda_2)$. 
+%\item Let $X \sim $Binomial($n,p$). Use the delta method to get an interval
+%  estimate for $\sqrt{p}$. 
+%    \end{enumerate}
+%\item An example of the multivariate delta method says that if $\bar X$ is a random
+%  $p$ dimensional random vector so that $\sqrt{n}(\bar X - \mu) \rightarrow N(0, \Sigma )$,  $f$ is a function from
+%  $\mathbb{R}^p \rightarrow \mathbb{R}^1$ and$\nabla f (\bar X)$ is the gradient vector of $f$ evaluated at $\bar X$
+%  then $\sqrt{n} \{f(\bar X) - f(\mu)\} \rightarrow N\{0, \nabla f(\bar X)' \Sigma \nabla f(\bar X)\}$ (in distribution).
+%  \begin{enumerate}[A.]
+%  \item Use the multivariate delta method to derive the standard formula for the CI for the relative risk.
+%  \item Use the multivariate delta method to derive the standard formula for the CI for the odds ratio.
+%  \end{enumerate}
+%\end{enumerate}
+
+\section{Multivariate means, variances and normals}
+\begin{enumerate}[1.]
+\item Let $X$ be a multivariate vector with mean $\mu$. Show that $E[AX + b] = A\mu + b$.
+\item Consider the previous problem; assume that $\mbox{Var}(X) = \Sigma$. Show that $\mbox{Var}(AX + b) = A\Sigma A'$.
+\item Show that $E[(X - \mu)(X - \mu)'] = E[XX'] - \mu\mu'$.
+\item Argue that $\mbox{Var}(X)$ is non-negative definite.
+\item Let $C(X, Y)$ be the multivariate covariance function, $E[(X - \mu_x) (Y - \mu_y)']$.
+  Show that $C(X, Y) = E[XY'] - \mu_X\mu_y'$. 
+\item Show that $C(X_1 + X_2, Y) = C(X_1, Y) + C(X_2, Y)$.
+\item Argue that $C(X, Y) = C(Y, X)'$. 
+\item Argue that $Var(X + Y) = Var(X) + C(X, Y) + C(Y, X) + V(Y)$.
+\item Argue that $C(AX, BY) = AC(X, Y)B'$.  
+\item Let $X \sim N(0, I)$. Argue that $a X / \sqrt{a'a} \sim N(0, 1)$ for any non-zero vector $a$. 
+\item Let $X \sim N(0, I)$. Argue that if $AA' = I$ then $AX \sim N(0, I)$. Argue geometrically why this occurs.
+\item Let $X_i$ for $i=1,\ldots, I$ be iid $k$ dimensional vectors
+from a distribution with mean $\mu$ and variance $\Sigma$. 
+What is the mean and variance of the multivariate pointwise sample
+average of the vectors?
+\item Let $X_i$ be iid $k$ dimensional vectors
+from a distribution with mean $\mu$ and variance $\Sigma$.
+Give an unbiased estimate of $\Sigma$ when $\mu$ is known.
+\item Consider a covariance matrix that is of the form
+$$
+\sigma^2 \mathbf{I} + \theta \mathbf{1}\mathbf{1}'
+$$	where $\sigma^2$ and $\theta$ are positive constants
+and $\mathbf{1}$ is a vector of ones. Argue that this
+matrix describes random vectors where every pair of elements of 
+the vector are 
+equally correlated and every elemant has the same variance. Give
+this correlation and variance.
+\item Let $X = (X_1' ~ X_2')' \sim N(\mu, \Sigma)$.
+  \begin{enumerate}[A.]
+  \item Derive the marginal distribution of $X_1$
+  \item Derive the conditional distribution $X_1 ~|~ X_2$. 
+  \end{enumerate}
+\item Let $X ~|~ \mu \sim N(\mu, \Sigma)$ and $\mu \sim N(\alpha, \tau I)$. Derive the distribution of
+  $\mu ~|~ X$.
+ \item Argue that if $Y \sim N(\mu, \Sigma)$, the quadratic form $(Y - \mu)'\Sigma^{-1}(Y - \mu)$ is $\chi^2_p$. 
+\end{enumerate}
+
+\section{Linear models}
+\begin{enumerate}[1.]
+\item Let $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$ where $\epsilon_i \sim N(0,\sigma^2)$ for $i=1,\ldots,n$.
+  \begin{enumerate}[A.]
+  \item Derive the MLEs for $\beta_0$, $\beta_1$ and $\sigma^2$.
+  \item Relate $\beta_1$ to the correlation between $Y_i$ and $X_i$.
+  \item Suppose that you standardize (i.e. take $(Y_i - \bar Y) / S_y$ and $(X_i - \bar X) / S_X$) $X_i$ and $Y_i$. Derive
+    the estimates of $\beta_0$ and $\beta_1$.
+  \end{enumerate}
+\item Let $Y_{ij} = \alpha_0 + \beta_j + \epsilon_{ij}$ for $i = 1,\ldots, I$ and $j = 1,\ldots, J$.
+  \begin{enumerate}[A.]
+  \item Write out the design matrix for the associated linear model.
+  \item Show what the estimates are under the following constraints:
+    \begin{enumerate}
+    \item $\alpha_0 = 0$
+    \item $\beta_1 = 0$
+    \item $\beta_J = 0$
+    \item $\sum_{j=1}^J \beta_j = 0$
+    \end{enumerate}
+  \end{enumerate}
+\item Let $\Sigma$ be a known matrix. Consider the model $Y = X\beta + \epsilon$ where $\epsilon \sim N(0, \Sigma)$. 
+  Derive the ML estimate of $\beta$.
+\item Let $P$ be a rotation matrix and consider the model $Y = X\beta
+  + \epsilon$ where $\epsilon \sim N(0, \sigma^2 I)$.  Suppose someone gave you the
+  ML estimates for $\tilde \beta$ and $\tilde \sigma^2$ from fitting
+  the model $\tilde Y = \tilde X \tilde \beta + \tilde \epsilon$ where
+  $\tilde Y = P Y$ and $\tilde X = PX$ and $\tilde \epsilon \sim N(0,
+  \tilde \sigma^2)$. Relate these estimates to the ML estimates
+  of $\beta$ and $\sigma^2$.
+\item Let $Y ~|~ \beta \sim N(X\beta, \sigma^2 I)$ and $\beta \sim N(\beta0, \tau^2 I)$. What is the posterior distribution of $\beta$?
+\item Consider the model $Y = X\beta + \epsilon$. Let $F$ be an invertible $p\times p$ matrix and $\tilde X = X F$. 
+\begin{enumerate}[A.]
+	\item Consider another model $Y = \tilde X \tilde \beta + \epsilon$. Argue that the models are equivalent.
+	\item Show that the least squares estimate of $\tilde \beta$ from the second model is $F^{-1} \hat \beta$ where $\hat \beta$ is the least squares
+	estimate from the first model.
+	\item Suppose that you have a linear regression equation where one of the regressors is temperature. Use the results above to relate the
+		beta coefficients if the regressor is input as Celsius or Fahrenheit.
+\end{enumerate}
+\item Consider a linear model with iid errors $N(0, \sigma^2)$ errors. Show that $\frac{1}{n-p} e'e$, where $e$ is the vector of residuals, is the
+	ML estimate of $\sigma^2$. Further show that this estimate is unbiased.
+\begin{enumerate}[A.]
+	\item Argue that $\frac{1}{\sigma^2} (y - X\beta)' (y - X\beta)$ is $\chi^2_n$
+	\item Argue that $\frac{1}{\sigma^2} e'e$ is $\chi^2_{n-p}$.
+	\item Argue that $\frac{1}{\sigma^2} (y - X \beta)' X(X'X)^{-1} X' (y - X\beta)$ is $\chi^2_p$.
+	\item In each of the above cases, use the expected value calculation for quadratic forms to verify that the expected values equals the Chi squared df.
+\end{enumerate}
+\end{enumerate}
+
+
+
+\section{Computing and analysis}
+\begin{enumerate}[1.]
+\item Write an R function that takes a $Y$ vector and $X$ matrix and obtains
+the least squares fit for the associated linear model.
+\item Write and R function that takes an $n\times p$ data matrix, $X$, and
+	``whitens'' it via subtracting out a mean and multiplying by a matrix
+	so that the resulting matrix has ($p$) sample column means of 0 and
+	$p\times p$ sample covariance matrix of $I$.
+%\item You collect 100 blood pressure measurements from a population. Twenty one exhibit high blood pressure. 
+%  Using a beta prior, plot the posteriors assuming: Beta(1, 1), Beta(2, 2), Beta(.5, .5). Calculate 95\% 
+%  equi-tail and HPD credible intervals.
+%\item You now collect 100 measurements from an otherwise similar population with different diets; 15 have high blood pressure.
+%  Plot the posteriors for the relative risk, risk difference and risk ratio.  Assume Beta(1,1) priors for both populations.
+%\item One nuclear reactor test failed $51$ times after having been monitored for $1,000$ days. Assuming a Gamma(.1,.1) prior
+%and a Poisson model, plot the posterior for the failure rate. Give a credible interval (HPD and equi-tail). 
+%\item A second reactor failed $25$ times for $600$ monitoring
+%  days. Plot the posterior and give credible intervals (HPD and equi-tail) for the
+%  relative rate with the other reactor.
+\end{enumerate}
+\end{document}

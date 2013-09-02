@@ -1,0 +1,58 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+
+\begin{document}
+\noindent
+{\bf BST 140.752 \\ Problem Set 4} \\
+\section{Residuals}
+\begin{enumerate}
+\item Consider a linear model $Y = X\beta + \delta \Delta + \epsilon$ where $\delta$ is a vector with a $1$ at position $i_0$ and $0$ elsewhere. Argue the following.
+\begin{enumerate}[A.]
+\item The $i_0$ residual is $0$ for this model.
+\item The fitted value for $\beta$ using all of the data and this model is equivalent to that using only the data with the $i_0$ observation deleted.
+\item Argue that the standardized Press residuals are a test statistic for $\Delta = 0$.
+\end{enumerate}
+\item Consider the residuals for the ordinary linear model. Derive their mean and variance. 
+\item Carefully write up the proof that relates the Press residuals to the ordinary residuals. Derive the mean and variance/covariance of the Press residuals.
+\item Prove the Sherman/Morrison/Woodburry theorem.
+\item Prove that the hat matrix diagonals are between 0 and 1.
+\item Why are the studentized residuals not exactly distributed as $t$ statistics?
+\end{enumerate}
+
+\section{Inference under incorrectly specified models}
+For all of this section, let Model 1 be $Y = X_1 \beta_1 + \epsilon$ and Model 2 be $Y = X_1 \beta_1 + X_2 \beta_2 + \tilde \epsilon$. 
+\begin{enumerate}
+\item Suppose that Model 1 is fit while Model 2 represents the actual truth. Give the bias and variance of $\beta_1$. Give the
+expected value of $S^2$.
+\item Suppose that Model 2 is fit while Model 1 is true. Give the bias and variance of the estimted $\beta$. Give the expected value of $S^2$. 
+\end{enumerate}
+
+\section{Coding and data analysis exercises}
+\begin{enumerate}
+\item Consider the sleep data from the previous homework.
+\begin{enumerate}[A.]
+\item Consider the model fit from the previous homework. Write a program to grab the hat diagnals as well as use R's lm to obtain them directly. 
+	Look at the influence of various data points.
+\item Consider the model fit from the previous homework. Write a program to grab the residuals and Press residuals. Investigate these residuals
+	in the context of this model.
+\end{enumerate}
+\item Consider the baseball data from the previous exercise.
+\begin{enumerate}[A.]
+\item Consider the model fit from the previous homework. Write a program to grab the hat diagnals as well as use R's lm to obtain them directly. 
+	Look at the influence of various data points.
+\item Consider the model fit from the previous homework. Write a program to grab the residuals and Press residuals. Investigate these residuals
+	in the context of this model.
+\end{enumerate}
+\item Write a function that takes a $Y$ ($n\times 1$) an $X_1$ ($n \times 1$) and an $X_2$ ($n \times (p-1)$) and produces the partial regression
+	plot of $e_{Y | X_2}$ by $e_{Y | X_2}$. 
+\end{enumerate}
+
+\end{document}

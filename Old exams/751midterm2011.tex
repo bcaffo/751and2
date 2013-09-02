@@ -1,0 +1,88 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.751 Midterm exam} \\
+Notes:
+\begin{list}{$\bullet$}{}
+\item You may not use a calculator for this exam.
+\item Please be neat and write legibly. Use the back of the pages if necessary.
+\item Good luck!
+\end{list}
+\ \\ \ \\ \ \\ \ \\ \ \\
+ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+{\bf printed name}
+
+\newpage
+
+\begin{enumerate}[1.]
+\item Let $X_{11} \ldots, X_{IJ}$ be iid random variables from a distribution
+  with density $f(x) = \frac{1}{2}\exp(-x/2)$ for $x > 0$ for $i=1,\ldots I$ and $j = 1, \ldots J$.
+  Assume $J$ is a very large number. Let $\bar X_j = \frac{1}{I} \sum_{i=1}^I X_{ij}$ and 
+  $S_j^2 = \sum_{i=1}^I (X_{ij} - \bar X_{j})^2 / (I - 1)$ Answer the following
+  \begin{enumerate}[A.]
+  \item Show that the mean and standard deviation associated with $f$ are both 2.  
+  \item Approximately what number will $\frac{1}{J}\sum_{j=1}^J \bar X_j$ be? Does your calculation require $I$ to be ``large''?
+  \item Approximately what number will $\frac{1}{J}\sum_{j=1}^J S_j^2$ be?  Does your calculation require $I$ to be ``large''?
+  \item Approximately what number will $\frac{1}{J}\left\{ \sum_{j=1}^J\left(\bar X_j - \frac{1}{J} \sum_{k=1}^J \bar X_k\right)^2\right\}$ be? Does your calculation require $I$ to be ``large''?
+  \item Approximately what number will $\frac{1}{J}\sum_{j=1}^J Y_j$ be, where $Y_j = I\left(\frac{\sqrt{I}(\bar X_j - 2)}{2} > 0\right)$ and $I(A)$ is the indicator that
+    the event $A$ occurred. Does your calculation require $I$ to be ``large''?
+  \end{enumerate}
+
+\newpage
+
+\item Let $f$ be a continuous density with associated distribution function $F$. Let $x_0 < x_1$ be points. 
+$$
+\tilde f(x) = \left\{
+  \begin{array}{lll}
+    f(x) / \{F(x_1) - F(x_0)\} & \mbox{For} &  x_0 \leq x \leq x_1\\
+    0 & \mbox{Otherwise} & 
+  \end{array}
+\right.
+$$ 
+\begin{enumerate}[A.]
+\item Argue that $\tilde f$ is a proper density.
+\item What is the distribution function associated with this density?
+\item Symbolically write out the $\alpha^{th}$ quantile of this distribution (using only $F$, $F^{-1}$, $f$, $x_0$ and $x_1$).
+\end{enumerate}
+
+\newpage
+
+\item Let $X$ follow a shifted and scaled logistic distribution; i.e. having associated density
+$$
+f(x) = \frac{\beta_1\exp( -\beta_0 - \beta_1 x )}{\left\{1 + \exp( -\beta_0 - \beta_1 x ) \right\}^{2}}
+$$
+for $-\infty < x < \infty$ and $\beta_0, \beta_1 > 0$ are constants.  
+\begin{enumerate}[A.]
+\item Argue that $f$ is a proper density function. 
+\item Calculate the distribution function associated with $f$.
+\item Let $Y = I(X \leq x_0)$ be an indicator of the event that $X$ is
+  less than $x_0$. Argue that the log of the odds that $Y = 1$ is
+  $\beta_0 + \beta_1 x_0$.
+\end{enumerate}
+
+\newpage
+
+\item Let $X_1,\ldots, X_n$ be iid from a normal distribution with mean $\mu$ and variance $\sigma^2$. 
+(I.e. having density $(2\pi \sigma^2)^{-1/2} \exp\{-(x - \mu)^2 / 2\sigma^2\}$ for $-\infty < x < \infty$.)
+  \begin{enumerate}[A.]
+  \item Argue that the ML estimate of $\mu$ is the sample average.
+  \item Argue that the ML estimate of $\sigma$ is the square root of the biased version of the sample standard variance. (You do not need to demonstrate that it's unbiased.)
+  \item Argue that the least squares estimate of $\mu$, i.e. that point which minimizes
+    $\sum_{i=1}^n (x_i - \mu)^2$, is also the sample average.
+  \end{enumerate}
+
+\end{enumerate}
+\end{document}
+

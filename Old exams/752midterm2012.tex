@@ -1,0 +1,56 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.752 Midterm exam}  \\ \ \\ \ \\
+\hrule
+\noindent {\bf printed name}
+\\ \ \\
+\hrule
+
+\noindent Assumptions
+\begin{itemize}
+\item $Y = \alpha + X_1 \beta_1 + X_2 \beta_2 + \epsilon = X \beta + \epsilon$ where $X = [J ~ X_1 ~ X_2]$ and $J$ is a vector of ones.
+\item $Y$ is $n\times 1$.
+\item $X_1$ is a full column rank $n\times p_1$ matrix.
+\item $X_2$ is a full column rank $n\times p_2$ matrix.
+\item $\epsilon \sim N(0,\sigma^2 I)$.
+\item  $X_1' X_2 = 0$ and $X'_1 J = X_2' J = 0$.
+\end{itemize}
+\ \\ 
+\hrule 
+\noindent Questions
+\begin{enumerate}[1.]
+\item Argue that the empirical correlation between any column of $X_1$
+  and any column of $X_2$ is 0 and that the mean of the columns of $X_1$ are zero. 
+\item Show that
+$\hat \alpha$, $\hat \beta_1$ and $\hat \beta_2$ (the least squares estimates) are all independent of one and another and give the estimates and variances.
+\item Assume that $\sigma^2$ is known. Derive a Chi-squared test that $\beta_1 = 0$. 
+\item An ellipse centered at the point $v \in \mathbb{R}^k$ is defined as the 
+solutions $x\in \mathbb{R}^k$ to the equation $$(x - v)' A^{-1} (x - v) = 1$$ 
+The eigenvalues of $A$ determine the length of the axes, by the way. 
+Use the F-test of the general linear hypothesis $H_0: K\beta_1 = m$ to derive a confidence ellipse for $\beta_1$.
+\item Suppose that you had a full rank design matrix $W = [J ~ W_1 ~ W_2]$ where
+$W_1$ and $W_2$ are $n\times p_1$ and $n \times p_2$ respectively. Derive linear transformations of $W_1$ and $W_2$ that get you from $W$ to a design
+matrix satisfying all of the qualities of $X$. Specifically that $X_1' J = X_2' J = 0$ and $X_1'X_2 = 0$.
+\item [BONUS] Give a setting where, by virtue of the design of an experiment, that $X_1$ would be exactly or nearly uncorrelated with $X_2$.
+\end{enumerate}
+\hrule
+
+%\newpage
+
+
+
+\end{document}
+

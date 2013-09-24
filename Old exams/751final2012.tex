@@ -1,0 +1,120 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.751 final exam} \\
+Notes:
+\begin{list}{$\bullet$}{}
+\item You may not use a calculator for this exam.
+\item Please be neat and write legibly. Use the back of the pages if necessary.
+\item Good luck!
+\end{list}
+\ \\ \ \\ \ \\ \ \\ \ \\
+ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+{\bf printed name}
+
+\newpage
+
+\begin{enumerate}[1.]
+\item Let $Y$ be an $n\times 1$ vector, $X$ be an $n\times p$ full column rank matrix. Let
+${\cal P} = \{ \tilde Y ~|~ \tilde Y = X \beta ~~\mbox{for}~~ \beta \in \mathbb{R}^p\}$. 
+(I.e. ${\cal P}$ is the linear subspace spanned by the columns of $X$.)
+\begin{enumerate}[A.]
+\item Derive a function $f : \mathbb{R}^n \rightarrow \mathbb{R}^n$ that takes any
+data point in $\mathbb{R}^n$ and finds its closest point in ${\cal P}$. (For Euclidean distance.)
+Call this point $\hat Y$.
+\item Argue that the difference $Y - \hat Y$ is orthogonal to any point in ${\cal P}$. 
+\item Suppose that the distance is defined as $d(Y, \tilde Y) = (Y - \tilde Y)' \Sigma^{-1} (Y - \tilde Y)$
+(Mahalanobis distance) where $\Sigma$ is positive definite. Derive a function
+$g:\mathbb{R}^n \rightarrow \mathbb{R}^n$ that takes any
+data point in $\mathbb{R}^n$ and finds its closest point in ${\cal P}$ where
+the distance is the Mahalanobis distance.
+\end{enumerate}
+
+\newpage
+
+\item Consider the model $Y | \beta \sim N(X\beta, \Sigma)$ where $Y$ is a vector of length $N$,
+$\beta$ is a vector of length $p$ and $X$ is full column rank. Suppose that we assume
+$\beta \sim N(\mu, \Gamma)$. What is the distribution of $\beta | Y$? 
+
+\newpage
+
+\item Let $X$ be an $n\times p$ full rank design matrix that contains an intercept, $Y$ be a vector of length $n$
+and $\mathbf{1}$ be a vector of length $n$ of ones. Let $\bar{Y}$ be the sample average of the $Y$.
+  \begin{enumerate}[A.]
+  \item Argue that $X (X'X)^{-1} X' \mathbf{1} = \mathbf{1}$. 
+    \item Argue that $||Y - \bar{Y} \mathbf{1}||^2 = ||Y - \hat Y||^2 + ||\hat Y - \bar{Y}\mathbf{1}||^2$.
+    \item Assume that $Y \sim N(X\beta, \sigma^2 \mathbf{I})$. Calculate $E[||Y - \hat Y||^2]$, 
+      $E[ ||\hat Y - \bar{Y}\mathbf{1}||^2]$ and $E[||Y - \bar{Y} \mathbf{1}||^2]$.
+  \end{enumerate}
+
+\end{enumerate}
+\end{document}
+
+\item Let $Y = X\beta + \epsilon$ where $Y$ is $n\times p$, $X$ is $n\times p$ of rank $p < n$ and $\epsilon \sim N(0, \sigma^2 I)$.
+  Let $X = U D V'$ where $U$ is $n\times p$ so that $U' U = I$, $D$ is a diagonal matrix ($p\times p$) and
+  $V$ is a $p\times p$ matrix so that $V'V = I$. Let $\gamma = D V' \beta$.
+  \begin{enumerate}[A.]
+  \item Argue that $Y = U \gamma + \epsilon$.
+  \item Argue that $U'Y = \gamma + \tilde \epsilon$ where $\tilde \epsilon \sim N(0, \sigma^2 I)$. 
+  \item Write out and simplify  the least squares estimate of $\gamma$. What is its distribution?
+  \item Suppose that $X$ is orthormal (i.e. $X' X = I$), argue that no matrix inversion is necessary to obtain $\hat \beta$ and write out
+  	the ML estimate for $\beta$.
+  \item 
+$$
+X = \left(
+\begin{array}{rrrr}
+1/2 & 1/2 &  1/\sqrt{2} & 0\\
+1/2 & 1/2 & -1/\sqrt{2} & 0\\
+1/2 & -1/2 & 0   & 1/\sqrt{2}\\
+1/2 & -1/2 & 0   & -1/\sqrt{2}\\
+\end{array}
+\right)
+$$
+and $Y = (y_1,y_2,y_3,y_4)$. Derive the ML estimate for $\beta$ in the terms of the $y_i$. 
+  \end{enumerate}
+
+\newpage
+
+\item Let $Y ~|~ \beta \sim N(X \beta, \sigma^2 I)$
+  \begin{enumerate}[A.]
+  \item Suppose that $\sigma^2$ is known, what is the sufficient statistic for $\beta$?
+  \item Suppose that $\beta \sim N(\beta_0, \Sigma)$. Derive the posterior
+  distribution for $\beta$.
+  \end{enumerate}
+
+\newpage
+
+\item Let $\bar X$ be the sample average of positive iid variables from a population with mean $\mu$ and variance $\sigma^2$. Assume $\sigma^2$ is known. 
+  \begin{enumerate}[A.]
+  \item Calculate an asymptotic 95\% confidence interval for $\log(\mu)$ using the delta method.
+  \item Suppose that you were to calculate an ordinary confidence interval for the mean using the logged data, eg with sample mean $\frac{1}{n} \sum_{i=1}^n \log(X_i)$.
+    Would this be estimating $\log(\mu)$? If not, what would it be estimating?
+  \item Let $\bar Y$ be the sample average of an independent collection of positive iid variables from a population with 
+    mean $\delta$ and known variance $\tau^2$. Calculate a delta method confidence interval for $\log(\mu/\delta)$.
+  \end{enumerate}
+
+\newpage
+
+\item Let $X_1\ldots X_n$ be independent Poisson $\lambda t_i$
+  \begin{enumerate}[A.]
+  \item Derive the sufficient statistic for $\lambda$.
+  \item Derive the ML estimate of $\lambda$.
+  \item Derive the conditional distribution of $X_1 \ldots X_n ~|~ \sum_{i=1}^n X_i$? (You may assume that the sum of independent Poissons is Poisson).
+  \item Let $t_1\ldots t_n$ be $Gamma(x_i, 1/\lambda)$. Argue that this model is likelihood equivalent to that in A.
+  \end{enumerate}
+
+\end{enumerate}
+\end{document}
+

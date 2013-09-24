@@ -1,0 +1,42 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.752 Final exam}  \\ \ \\ \ \\
+\hrule
+\noindent {\bf printed name}
+\\ \ \\
+\hrule
+
+\noindent Questions 
+\begin{enumerate}[1.]
+\item Let $E[Y_{i}] = f(x_{i}) = \sum_{j=1}^J \beta_j x_{i}^j + \sum_{k=1}^K \psi_k (x_{i} - \xi_k)_+^J$. Here $\xi_k$ are known
+knot points and $(a)_+ = a$ if $a > 0$ and $0$ otherwise. Characterize $f$ in terms of its continuity and differentiability. 
+\item Let $E[Y_{ij}] = \mu + \beta_i + \gamma x_{ij}$ where $i = 1, 2$ and $j = 1,\ldots, J_i$. Argue
+that $\theta = \beta_1 - \beta_2$ is estimable. Given $\hat \theta$ and $\hat \gamma$, give the estimates of $\mu$, $\beta_1$ and $\beta_2$ under
+the assumptions $\mu=0$, $\beta_1 = 0$, $\beta_2 = 0$ and $\beta_1 + \beta_2 = 0$.
+\item Consider the previous problem. Derive the ordinary least squares (OLS) estimate of 
+$\beta_1 - \beta_2$. Hint, it is of the form $(a - b) - \hat \gamma(c - d)$, where $a$, $b$, $c$, $d$ and $\hat \gamma$ are functions of the data.
+\item  Consider Problem 2 again. Consider two estimates of $\theta$, one as $\tilde \theta = \bar Y_1 - \bar Y_2$ and the other as the
+regression adjusted estimates from the previous problem, $\hat \theta$. Draw scatterplots where the model clearly holds and 
+i) $\hat \theta = \tilde \theta$, ii) $\hat \theta > \tilde \theta$, iii) $\hat \theta < \tilde \theta$, iv) $\hat \theta = 0$ and $\tilde \theta > 0$
+and v) $\hat \theta > 0$ and $\tilde \theta = 0$.
+\item Consider a mean model $E[Y_{ij}] = \beta_0 + \beta_i + \gamma_i x_{ij}$ for $i = 1, 2$ and $j = 1,\ldots, J_i$. Argue that
+$\gamma_1 - \gamma_2$ is estimable.
+\end{enumerate}
+
+
+
+\end{document}
+

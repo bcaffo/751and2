@@ -1,0 +1,87 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+\newcommand{\RQ}{[{\bf REQUIRED}]~}
+
+
+\begin{document}
+\noindent
+{\bf BST 140.751 Midterm exam} \\
+Notes:
+\begin{list}{$\bullet$}{}
+\item You may not use a calculator for this exam.
+\item Please be neat and write legibly. Use the back of the pages if necessary.
+\item Good luck!
+\end{list}
+\ \\ \ \\ \ \\ \ \\ \ \\
+ \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_ \\
+{\bf printed name}
+
+\newpage
+
+\begin{enumerate}[1.]
+
+\item You are playing a game with a friend where you flip a coin and if it comes up heads you give her  $x$ dollars and if it comes up tails she gives you $cx$ dollars for some value of $c$.  The coin has probability of a head of $p$.
+\begin{enumerate}[a.]
+\item What must be true about $c$ for the game to be ``fair''. That is, to have expected winnings 0 for both players?
+\item Suppose that you play the game $n$ times. What is the mean and variance
+for your earnings?
+\item How could you make your variance the largest? 
+\end{enumerate}
+
+\newpage
+
+\item Let $Y_1,\ldots, Y_I$ be independent random variables so that
+$Y_i \sim N(x_i \beta, \sigma^2)$ where $\{x_i\}_{i=1}^I$ are known.
+\begin{enumerate}[a.]
+\item Show that the ML estimate of $\beta$ is $\hat \beta = \frac{\sum_{i=1}^I y_i x_i}{\sum x_i^2}$.
+\item Show that this estimate is unbiased. 
+\item Derive the variance of $\hat \beta$.
+\item Derive the ML estimate of $\sigma^2$.
+\end{enumerate}
+
+\newpage
+
+\item Let $X_i$ be independent $\mbox{Poisson}(\lambda t_i)$ for $i = 1,\ldots, I$. The $t_i$ are known. Recall a variable is $\mbox{Poisson}(\mu)$ if it has mass function 
+$\frac{\mu^x e^{-\mu}}{x!}$ for $x=0,1,\ldots$. The mean and variance of
+the Poisson mass function is $\mu$.
+\begin{enumerate}[a.]
+\item Argue that the Poisson mass function is a valid mass fuction.
+\item Give a univariate function of the collection $\{X_i\}$ that is 
+sufficient for specifying the likelihood for $\lambda$.
+\item Give the maximum likelihood estimate for $\lambda$.
+\item Show that the ML estimate of $\lambda$ is both unbiased and 
+derive its variance.
+\end{enumerate}
+
+\newpage
+
+\item Consider a diagnostic test. Let $D$ be the event that the
+patient has the disease and $T_{1}$ be the event that a first test is
+positive. Let $T_{2}$ be the result that a second test is positive. Assume
+that the result of the second test is independent of the first.
+\begin{enumerate}[a.]
+\item Symbolically derive the positive predictive value of a positive
+value on the first test in the
+terms of its sensitivity and specificity. 
+\item  Consider the test $T_3$ defined as positive if either $T_1$ or $T_2$
+(or both).  Derive the sensitivity and specificity of $T_3$
+as a function of the sensitivity and specificity of $T_1$ and $T_2$.
+\item Consider the test $T_4$ defined as positive if both $T_1$ and $T_2$.
+Derive the sensitivity and specificity of $T_4$ as a function
+of the sensitivity and specificity of $T_1$ and $T_2$.
+\item Say what you can about the ordering ($>$, $\geq$, $<$, $\leq$) between
+the sensitivities of the four tests. Repeat this for the specificities.
+ 
+\end{enumerate}
+
+\end{enumerate}
+\end{document}
+

@@ -111,43 +111,43 @@ cases.  Using the following two approaches
 \end{enumerate}
 \end{enumerate}
 
-%\section{Bayesian statistics}
-%\begin{enumerate}
-%\item Let $X_1,\ldots, X_n ~|~ p$ be Bernoulli$(p)$ and $p \sim Beta(\alpha, \beta)$. Derive the posterior
-%  distribution and give its mean and variance.
-%\item Let $X_1,\ldots, X_n ~|~ \lambda$ be Poisson$(t_i\lambda)$ (respectively) and $\lambda \sim Gamma(\alpha, \beta)$.
-%  Derive the posterior distribution and give its mean and variance.
-%\item Let $n = (n_1,\ldots, n_k) | \theta = (\theta_1, \ldots, \theta_k)$ be multinomial$(N, \theta)$ and $\theta \sim Dirichlet(\alpha)$
-%where $\alpha = (\alpha_1,\ldots,\alpha_k)$. Derive the posterior for $theta$ and calculate its mean.
-%\item Let $X_1,\ldots, X_n ~|~ \mu, \sigma^2$ be iid Normal$(\mu, \sigma^2)$ and $\mu ~|~ \sigma^2 \sim Normal(\mu_0, \sigma^2 \tau)$
-%and $\sigma^{-2} \sim Gamma(\alpha, \beta)$. Derive the posterior for $(\mu,\sigma)$. 
-%\end{enumerate}
-%
-%% \section{Multivariate normal distribution}
-%% \begin{enumerate}[1.]
-%% \item 
-%% \end{enumerate}
-%
-%\section{The Delta method}
-%\begin{enumerate}[1.]
-%\item Assume the fact that if $X\sim$Poisson($\lambda t$) then 
-%  $\frac{X - \lambda t}{\sqrt{t\lambda}} \rightarrow N(0,1)$ for large $t$.
-%    \begin{enumerate}[A.]
-%    \item Use the delta method to calculate an interval for $\log(\lambda)$.
-%    \item Suppose that $Y \sim$ Poisson($\lambda_2 t_2$). Create a 
-%      confidence interval for $\log(\lambda / \lambda_2)$. 
-%\item Let $X \sim $Binomial($n,p$). Use the delta method to get an interval
-%  estimate for $\sqrt{p}$. 
-%    \end{enumerate}
-%\item An example of the multivariate delta method says that if $\bar X$ is a random
-%  $p$ dimensional random vector so that $\sqrt{n}(\bar X - \mu) \rightarrow N(0, \Sigma )$,  $f$ is a function from
-%  $\mathbb{R}^p \rightarrow \mathbb{R}^1$ and$\nabla f (\bar X)$ is the gradient vector of $f$ evaluated at $\bar X$
-%  then $\sqrt{n} \{f(\bar X) - f(\mu)\} \rightarrow N\{0, \nabla f(\bar X)' \Sigma \nabla f(\bar X)\}$ (in distribution).
-%  \begin{enumerate}[A.]
-%  \item Use the multivariate delta method to derive the standard formula for the CI for the relative risk.
-%  \item Use the multivariate delta method to derive the standard formula for the CI for the odds ratio.
-%  \end{enumerate}
-%\end{enumerate}
+\section{Bayesian statistics}
+\begin{enumerate}
+\item Let $X_1,\ldots, X_n ~|~ p$ be Bernoulli$(p)$ and $p \sim Beta(\alpha, \beta)$. Derive the posterior
+  distribution and give its mean and variance.
+\item Let $X_1,\ldots, X_n ~|~ \lambda$ be Poisson$(t_i\lambda)$ (respectively) and $\lambda \sim Gamma(\alpha, \beta)$.
+  Derive the posterior distribution and give its mean and variance.
+\item Let $n = (n_1,\ldots, n_k) | \theta = (\theta_1, \ldots, \theta_k)$ be multinomial$(N, \theta)$ and $\theta \sim Dirichlet(\alpha)$
+where $\alpha = (\alpha_1,\ldots,\alpha_k)$. Derive the posterior for $theta$ and calculate its mean.
+\item Let $X_1,\ldots, X_n ~|~ \mu, \sigma^2$ be iid Normal$(\mu, \sigma^2)$ and $\mu ~|~ \sigma^2 \sim Normal(\mu_0, \sigma^2 \tau)$
+and $\sigma^{-2} \sim Gamma(\alpha, \beta)$. Derive the posterior for $(\mu,\sigma)$. 
+\end{enumerate}
+
+% \section{Multivariate normal distribution}
+% \begin{enumerate}[1.]
+% \item 
+% \end{enumerate}
+
+\section{The Delta method}
+\begin{enumerate}[1.]
+\item Assume the fact that if $X\sim$Poisson($\lambda t$) then 
+  $\frac{X - \lambda t}{\sqrt{t\lambda}} \rightarrow N(0,1)$ for large $t$.
+    \begin{enumerate}[A.]
+    \item Use the delta method to calculate an interval for $\log(\lambda)$.
+    \item Suppose that $Y \sim$ Poisson($\lambda_2 t_2$). Create a 
+      confidence interval for $\log(\lambda / \lambda_2)$. 
+\item Let $X \sim $Binomial($n,p$). Use the delta method to get an interval
+  estimate for $\sqrt{p}$. 
+    \end{enumerate}
+\item An example of the multivariate delta method says that if $\bar X$ is a random
+  $p$ dimensional random vector so that $\sqrt{n}(\bar X - \mu) \rightarrow N(0, \Sigma )$,  $f$ is a function from
+  $\mathbb{R}^p \rightarrow \mathbb{R}^1$ and$\nabla f (\bar X)$ is the gradient vector of $f$ evaluated at $\bar X$
+  then $\sqrt{n} \{f(\bar X) - f(\mu)\} \rightarrow N\{0, \nabla f(\bar X)' \Sigma \nabla f(\bar X)\}$ (in distribution).
+  \begin{enumerate}[A.]
+  \item Use the multivariate delta method to derive the standard formula for the CI for the relative risk.
+  \item Use the multivariate delta method to derive the standard formula for the CI for the odds ratio.
+  \end{enumerate}
+\end{enumerate}
 
 \section{Multivariate means, variances and normals}
 \begin{enumerate}[1.]
@@ -247,15 +247,15 @@ the least squares fit for the associated linear model.
 	``whitens'' it via subtracting out a mean and multiplying by a matrix
 	so that the resulting matrix has ($p$) sample column means of 0 and
 	$p\times p$ sample covariance matrix of $I$.
-%\item You collect 100 blood pressure measurements from a population. Twenty one exhibit high blood pressure. 
-%  Using a beta prior, plot the posteriors assuming: Beta(1, 1), Beta(2, 2), Beta(.5, .5). Calculate 95\% 
-%  equi-tail and HPD credible intervals.
-%\item You now collect 100 measurements from an otherwise similar population with different diets; 15 have high blood pressure.
-%  Plot the posteriors for the relative risk, risk difference and risk ratio.  Assume Beta(1,1) priors for both populations.
-%\item One nuclear reactor test failed $51$ times after having been monitored for $1,000$ days. Assuming a Gamma(.1,.1) prior
-%and a Poisson model, plot the posterior for the failure rate. Give a credible interval (HPD and equi-tail). 
-%\item A second reactor failed $25$ times for $600$ monitoring
-%  days. Plot the posterior and give credible intervals (HPD and equi-tail) for the
-%  relative rate with the other reactor.
+\item You collect 100 blood pressure measurements from a population. Twenty one exhibit high blood pressure. 
+  Using a beta prior, plot the posteriors assuming: Beta(1, 1), Beta(2, 2), Beta(.5, .5). Calculate 95\% 
+  equi-tail and HPD credible intervals.
+\item You now collect 100 measurements from an otherwise similar population with different diets; 15 have high blood pressure.
+  Plot the posteriors for the relative risk, risk difference and risk ratio.  Assume Beta(1,1) priors for both populations.
+\item One nuclear reactor test failed $51$ times after having been monitored for $1,000$ days. Assuming a Gamma(.1,.1) prior
+and a Poisson model, plot the posterior for the failure rate. Give a credible interval (HPD and equi-tail). 
+\item A second reactor failed $25$ times for $600$ monitoring
+  days. Plot the posterior and give credible intervals (HPD and equi-tail) for the
+  relative rate with the other reactor.
 \end{enumerate}
 \end{document}

@@ -35,6 +35,30 @@ expected value of $S^2$.
 \item Suppose that Model 2 is fit while Model 1 is true. Give the bias and variance of the estimted $\beta$. Give the expected value of $S^2$. 
 \end{enumerate}
 
+\section{GLMs}
+\begin{enumerate}
+\item Calculate the mean and variance of a random variable from an exponential family using the cumulant generating function.
+\item Show that when using a canonical link function, the Fisher
+  scoring and Newton Raphson algorithms for finding glm MLEs
+  are identical.
+\item Show that, using the notation from class, for known $\phi$ and a
+  canonical link, the sufficient statistics for a glm are $X^t y$ where
+  $t$ denotes a transpose.
+\item Suppose that $y_i$ is Poisson with $g(\mu_i) = \alpha + \beta x_i$
+  where $g$ is the link function and $x_i=1$ for $i=1,\ldots,n_a$ and
+  $x_i=0$ for $i= n_a + 1, \ldots, n_a + n_b$. That is, $x_i$, is a treatment
+  indicator for two groups, $A$ and $B$. Show that, regardless of the link
+  function, the fitted means equal the two sample means.
+ \item Consider the class of {\em binary} glms where the link function
+  satisfies $g\{\mu(x)\} = \Phi^{-1}\{\mu(x)\} = \alpha + \beta x$
+  where $\Phi(\cdot)$ is a distribution function and $\mu(x)$ is the
+  Bernoulli mean. Let $\phi$ be the (assumed continuous) associated
+  density. Show that the $x$ at which $\mu(x) = .5$ is
+  $x=-\alpha/\beta$.  Further show that the rate of change of $\mu(x)$
+  at this point is $\beta \phi(0)$. Illustrate that this is $.25\beta$
+  for the logit link and $\beta / \sqrt{2\pi}$ for the probit link.
+\end{enumerate}  
+
 \section{Coding and data analysis exercises}
 \begin{enumerate}
 \item Consider the sleep data from the previous homework.
@@ -53,6 +77,30 @@ expected value of $S^2$.
 \end{enumerate}
 \item Write a function that takes a $Y$ ($n\times 1$) an $X_1$ ($n \times 1$) and an $X_2$ ($n \times (p-1)$) and produces the partial regression
 	plot of $e_{Y | X_2}$ by $e_{Y | X_2}$. 
+\item Consider the Challenger O-ring data
+\item The table below shows the temperature (Temp in Fahrenheit) and presence (1) or
+  absence of O-ring distress (OD) at the time of flight for the 23 flights
+  before the 1986 Challenger mission disaster.
+\begin{center}
+  \begin{tabular}{cc|cc|cc|cc|cc}
+    \hline
+    Temp & OD & Temp & OD & Temp & OD & Temp & OD & Temp & OD  \\ \hline
+    66 & 0 & 70 & 1 & 69 & 0 & 68 & 0 & 67 & 0 \\
+    72 & 0 & 73 & 0 & 70 & 0 & 57 & 1 & 63 & 1 \\
+    70 & 1 & 78 & 0 & 67 & 0 & 53 & 1 & 67 & 0 \\
+    75 & 0 & 70 & 0 & 81 & 0 & 76 & 0 & 79 & 0 \\
+    75 & 1 & 76 & 0 & 58 & 1 &    &   &    &   \\ \hline
+  \end{tabular}
+\end{center}
+\begin{enumerate}[A.]
+\item Use logistic regression to model the effect of temperature on the probability
+  of thermal distress. Interpret the results. Plot a figure of the fitted model.
+\item Estimate the probability of thermal distress at 31 degrees, which was the
+  temperature at the time of the Challenger flight.
+\item Construct a profile likelihood for the effect of temperature on the odds
+  of thermal distress, interpret.
+\item Check model fit by comparing this model to a more complex model.
+\end{enumerate}
 \end{enumerate}
 
 \end{document}

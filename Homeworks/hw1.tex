@@ -13,8 +13,38 @@
 \noindent
 {\bf BST 140.751 \\ Problem Set 1} \\
 
-\section{Least squares}
+\section{Regression and background}
+\begin{enumerate}[1.]
+\item If your normalize (mean 0 and variance 1) your $Y$ and $X$ vectors,
+argue that the regression slope estimate is the correlation.
+\item Let $Y$ and $X$ be one dimensional vectors of length $n$. Give
+the relationship between the slope from regressing $Y$ on $X$ and $X$
+on $Y$.
+\item Consider the residuals after mean only regression. Argue
+that they sum to 0.
+\item Consider the residuals after regression through the origin.
+Argue that they are orthogonal to the regressor.
+\item Consider the residuals from ordinary linear regression. Argue
+that the residuals are orthogonal to both $J_n$ and $X$.
+\end{enumerate}
 
+\section{Least squares}
+\begin{enumerate}[1.]
+\item Show that $I - H$ is an idempotent matrix where $H$ is idempotent.
+\item Let $X = [X_1 X_2]$ be an $n\times 2$ design matrix and consider 
+$$|| Y - X \beta ||^2$$ where $\beta = (\beta_1 \beta2)'$. Show
+that $\hat \beta_2$ can be obtained by taking the residuals after
+regressing $X_1$ out of $Y$ and $X_2$ then doing regression through
+the origin on the residuals.
+\item Argue that $X$, $X'$, $X'X$ and $XX'$ all have the same matrix rank.
+\item Suppose that $X$ is such that $X'X = I$. Find the associated least
+squares estimate of $\beta$.
+\item Suppose that the design matrix is of the form $J_A \otimes I$ where
+$J_A$ is a vector of length $A$ and $I$ is a $B\times B$ identity matrix. 
+Let $Y$ be a $AB \times 1$ length vector. Find the least squares estimates
+associated with this design matrix.
+
+\end{enumerate}
 
 
 \section{Linear models}

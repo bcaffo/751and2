@@ -43,7 +43,22 @@ squares estimate of $\beta$.
 $J_A$ is a vector of length $A$ and $I$ is a $B\times B$ identity matrix. 
 Let $Y$ be a $AB \times 1$ length vector. Find the least squares estimates
 associated with this design matrix.
-
+\item Let $X = [X1 X2]$ where $X_1$ is $n\times p_1$ and $X_2$ is $n\times p_2$.
+Consider minimizing $|| Y - X \beta ||$ where $\beta = (\beta_1' \beta_2')'$. 
+Argue that the least squares estimate of $\beta_1$ can be obtained by 
+regressing $e_{Y | X_2} = (I - X_2 (X_2' X_2)^{-1} X_2') Y$ as the outcome
+and $e_{X_1 | X_2} = (I - X_1 (X_1 ' X_1)^{-1} X_1')X_2$. as the predictor.
+\item Show that if $X = [X_1 \ldots X_p]$ is such that $X'X = I$. Then
+the least squares estimate of $\beta$ is $X' Y$ and further $\hat Y$
+is $\sum_{j = 1}^p X_i <Y, X_i>$. 
+\item Assume that the columns of $X$ have been mean centered so that
+$J_n' X = (0 \ldots 0)'$. Suppose further that $X = U D V'$ where $U'U = V'V = I$ and $D$ is a
+diagonal matrix of singular values. Argue that the matrix $U = X V' D^{-1}$ results in an orthonormal
+basis for the same space as the column space of $X$. Thus, the $\hat Y$ matrix treating
+$X$ as the outcome and treating $U$ as the outcome are the same and further
+$\hat Y = \sum_{j=1}^p U_i <U_i, Y>$ where $U_i$ are the columns of $U$.
+\item If $U=XW$ where $W$ is an invertibble matrix, relate the estimated coefficients
+obtained when using $U$ as the design matrix and $W$ as the design matrix.
 \end{enumerate}
 
 
@@ -146,16 +161,6 @@ the least squares fit for the associated linear model.
 	``whitens'' it via subtracting out a mean and multiplying by a matrix
 	so that the resulting matrix has ($p$) sample column means of 0 and
 	$p\times p$ sample covariance matrix of $I$.
-\item You collect 100 blood pressure measurements from a population. Twenty one exhibit high blood pressure. 
-  Using a beta prior, plot the posteriors assuming: Beta(1, 1), Beta(2, 2), Beta(.5, .5). Calculate 95\% 
-  equi-tail and HPD credible intervals.
-\item You now collect 100 measurements from an otherwise similar population with different diets; 15 have high blood pressure.
-  Plot the posteriors for the relative risk, risk difference and risk ratio.  Assume Beta(1,1) priors for both populations.
-\item One nuclear reactor test failed $51$ times after having been monitored for $1,000$ days. Assuming a Gamma(.1,.1) prior
-and a Poisson model, plot the posterior for the failure rate. Give a credible interval (HPD and equi-tail). 
-\item A second reactor failed $25$ times for $600$ monitoring
-  days. Plot the posterior and give credible intervals (HPD and equi-tail) for the
-  relative rate with the other reactor.
 \end{enumerate}
 
 \end{document}

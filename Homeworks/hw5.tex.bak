@@ -1,0 +1,23 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+
+\begin{document}
+\noindent
+{\bf BST 140.752 \\ Problem Set 5} \\
+\section{Residuals}
+\begin{enumerate}
+\item Go through the argument that the propensity score is a balancing and fill in the details of the proof.
+\item Give the number of continuous derivatives for the function $f(x) = \sum_{k=0}^k \beta_k x^k + \sum_{j=1}^J x (x - \xi_j)^k_+$ for known knot points.
+\item Generate a sinusoid with noise around it. Use regression splines to fit the model.
+\item 
+\end{enumerate}
+
+\end{document}

@@ -1,0 +1,29 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+
+\title{Notes for 751 and 752}
+\author{2013 751 and 752 class}
+
+\begin{document}
+\maketitle
+
+\section{The multivariate normal}
+\section{Least squares and the geometry of linear models}
+\section{Likelihood and estimation for linear models}
+\section{Inference for linear models}
+\section{Diagnostics for linear models}
+\section{Confounding, causal inference and the propensity score}
+\section{Asymptotics for linear models}
+\section{Model selection}
+\section{Bayesian linear models}
+
+
+\end{document}

@@ -1,0 +1,131 @@
+\documentclass[12pt]{article}
+\usepackage{geometry,amsmath,amssymb, graphicx, natbib, float, enumerate}
+\geometry{margin=1in}
+\renewcommand{\familydefault}{cmss}
+\restylefloat{table}
+\restylefloat{figure}
+
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\logit}{\mathrm{logit}}
+
+\begin{document}
+\noindent
+{\bf BST 140.751 \\ Problem Set 1} \\
+
+\section{Least squares}
+
+
+
+\section{Linear models}
+\begin{enumerate}[1.]
+\item Let $Y_i = \beta_0 + \beta_1 X_i + \epsilon_i$ where $\epsilon_i \sim N(0,\sigma^2)$ for $i=1,\ldots,n$.
+  \begin{enumerate}[A.]
+  \item Derive the MLEs for $\beta_0$, $\beta_1$ and $\sigma^2$.
+  \item Relate $\beta_1$ to the correlation between $Y_i$ and $X_i$.
+  \item Suppose that you standardize (i.e. take $(Y_i - \bar Y) / S_y$ and $(X_i - \bar X) / S_X$) $X_i$ and $Y_i$. Derive
+    the estimates of $\beta_0$ and $\beta_1$.
+  \end{enumerate}
+\item Let $Y_{ij} = \alpha_0 + \beta_j + \epsilon_{ij}$ for $i = 1,\ldots, I$ and $j = 1,\ldots, J$.
+  \begin{enumerate}[A.]
+  \item Write out the design matrix for the associated linear model.
+  \item Show what the estimates are under the following constraints:
+    \begin{enumerate}
+    \item $\alpha_0 = 0$
+    \item $\beta_1 = 0$
+    \item $\beta_J = 0$
+    \item $\sum_{j=1}^J \beta_j = 0$
+    \end{enumerate}
+  \end{enumerate}
+\item Let $\Sigma$ be a known matrix. Consider the model $Y = X\beta + \epsilon$ where $\epsilon \sim N(0, \Sigma)$. 
+  Derive the ML estimate of $\beta$.
+\item Let $P$ be a rotation matrix and consider the model $Y = X\beta
+  + \epsilon$ where $\epsilon \sim N(0, \sigma^2 I)$.  Suppose someone gave you the
+  ML estimates for $\tilde \beta$ and $\tilde \sigma^2$ from fitting
+  the model $\tilde Y = \tilde X \tilde \beta + \tilde \epsilon$ where
+  $\tilde Y = P Y$ and $\tilde X = PX$ and $\tilde \epsilon \sim N(0,
+  \tilde \sigma^2)$. Relate these estimates to the ML estimates
+  of $\beta$ and $\sigma^2$.
+\item Let $Y ~|~ \beta \sim N(X\beta, \sigma^2 I)$ and $\beta \sim N(\beta0, \tau^2 I)$. What is the posterior distribution of $\beta$?
+\item Consider the model $Y = X\beta + \epsilon$. Let $F$ be an invertible $p\times p$ matrix and $\tilde X = X F$. 
+\begin{enumerate}[A.]
+	\item Consider another model $Y = \tilde X \tilde \beta + \epsilon$. Argue that the models are equivalent.
+	\item Show that the least squares estimate of $\tilde \beta$ from the second model is $F^{-1} \hat \beta$ where $\hat \beta$ is the least squares
+	estimate from the first model.
+	\item Suppose that you have a linear regression equation where one of the regressors is temperature. Use the results above to relate the
+		beta coefficients if the regressor is input as Celsius or Fahrenheit.
+\end{enumerate}
+\item Consider a linear model with iid errors $N(0, \sigma^2)$ errors. Show that $\frac{1}{n-p} e'e$, where $e$ is the vector of residuals, is the
+	ML estimate of $\sigma^2$. Further show that this estimate is unbiased.
+\begin{enumerate}[A.]
+	\item Argue that $\frac{1}{\sigma^2} (y - X\beta)' (y - X\beta)$ is $\chi^2_n$
+	\item Argue that $\frac{1}{\sigma^2} e'e$ is $\chi^2_{n-p}$.
+	\item Argue that $\frac{1}{\sigma^2} (y - X \beta)' X(X'X)^{-1} X' (y - X\beta)$ is $\chi^2_p$.
+	\item In each of the above cases, use the expected value calculation for quadratic forms to verify that the expected values equals the Chi squared df.
+\end{enumerate}
+\end{enumerate}
+
+
+\section{Multivariate means, variances and normals}
+\begin{enumerate}[1.]
+\item Let $X$ be a multivariate vector with mean $\mu$. Show that $E[AX + b] = A\mu + b$.
+\item Consider the previous problem; assume that $\mbox{Var}(X) = \Sigma$. Show that $\mbox{Var}(AX + b) = A\Sigma A'$.
+\item Show that $E[(X - \mu)(X - \mu)'] = E[XX'] - \mu\mu'$.
+\item Argue that $\mbox{Var}(X)$ is non-negative definite.
+\item Let $C(X, Y)$ be the multivariate covariance function, $E[(X - \mu_x) (Y - \mu_y)']$.
+  Show that $C(X, Y) = E[XY'] - \mu_X\mu_y'$. 
+\item Show that $C(X_1 + X_2, Y) = C(X_1, Y) + C(X_2, Y)$.
+\item Argue that $C(X, Y) = C(Y, X)'$. 
+\item Argue that $Var(X + Y) = Var(X) + C(X, Y) + C(Y, X) + V(Y)$.
+\item Argue that $C(AX, BY) = AC(X, Y)B'$.  
+\item Let $X \sim N(0, I)$. Argue that $a X / \sqrt{a'a} \sim N(0, 1)$ for any non-zero vector $a$. 
+\item Let $X \sim N(0, I)$. Argue that if $AA' = I$ then $AX \sim N(0, I)$. Argue geometrically why this occurs.
+\item Let $X_i$ for $i=1,\ldots, I$ be iid $k$ dimensional vectors
+from a distribution with mean $\mu$ and variance $\Sigma$. 
+What is the mean and variance of the multivariate pointwise sample
+average of the vectors?
+\item Let $X_i$ be iid $k$ dimensional vectors
+from a distribution with mean $\mu$ and variance $\Sigma$.
+Give an unbiased estimate of $\Sigma$ when $\mu$ is known.
+\item Consider a covariance matrix that is of the form
+$$
+\sigma^2 \mathbf{I} + \theta \mathbf{1}\mathbf{1}'
+$$	where $\sigma^2$ and $\theta$ are positive constants
+and $\mathbf{1}$ is a vector of ones. Argue that this
+matrix describes random vectors where every pair of elements of 
+the vector are 
+equally correlated and every elemant has the same variance. Give
+this correlation and variance.
+\item Let $X = (X_1' ~ X_2')' \sim N(\mu, \Sigma)$.
+  \begin{enumerate}[A.]
+  \item Derive the marginal distribution of $X_1$
+  \item Derive the conditional distribution $X_1 ~|~ X_2$. 
+  \end{enumerate}
+\item Let $X ~|~ \mu \sim N(\mu, \Sigma)$ and $\mu \sim N(\alpha, \tau I)$. Derive the distribution of
+  $\mu ~|~ X$.
+ \item Argue that if $Y \sim N(\mu, \Sigma)$, the quadratic form $(Y - \mu)'\Sigma^{-1}(Y - \mu)$ is $\chi^2_p$. 
+\end{enumerate}
+
+
+
+\section{Computing and analysis}
+\begin{enumerate}[1.]
+\item Write an R function that takes a $Y$ vector and $X$ matrix and obtains
+the least squares fit for the associated linear model.
+\item Write and R function that takes an $n\times p$ data matrix, $X$, and
+	``whitens'' it via subtracting out a mean and multiplying by a matrix
+	so that the resulting matrix has ($p$) sample column means of 0 and
+	$p\times p$ sample covariance matrix of $I$.
+\item You collect 100 blood pressure measurements from a population. Twenty one exhibit high blood pressure. 
+  Using a beta prior, plot the posteriors assuming: Beta(1, 1), Beta(2, 2), Beta(.5, .5). Calculate 95\% 
+  equi-tail and HPD credible intervals.
+\item You now collect 100 measurements from an otherwise similar population with different diets; 15 have high blood pressure.
+  Plot the posteriors for the relative risk, risk difference and risk ratio.  Assume Beta(1,1) priors for both populations.
+\item One nuclear reactor test failed $51$ times after having been monitored for $1,000$ days. Assuming a Gamma(.1,.1) prior
+and a Poisson model, plot the posterior for the failure rate. Give a credible interval (HPD and equi-tail). 
+\item A second reactor failed $25$ times for $600$ monitoring
+  days. Plot the posterior and give credible intervals (HPD and equi-tail) for the
+  relative rate with the other reactor.
+\end{enumerate}
+
+\end{document}

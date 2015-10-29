@@ -35,9 +35,41 @@ expected value of $S^2$.
 \item Suppose that Model 2 is fit while Model 1 is true. Give the bias and variance of the estimted $\beta$. Give the expected value of $S^2$. 
 \end{enumerate}
 
-
+\section{Confidence ellipsoids}
+\begin{enumerate}
+\item Derive a confidence ellipsoid for a linear contrast of coefficients $K \beta$.
+\item Derive a confidence ellipsoid for a set predictions at $X$ values $X_{new}$
+\item Derive a prediction ellipsoid for a set of predictions at $X$ values $X_{new}$.
 \end{enumerate}
 
+\section{Asymptotics}
+\begin{enumerate}
+\item Rigorously prove the consistency of the linear regression estimates (slope and intercept).
+\item Rigorously prove an asymptotic confidence interval for the slope of a regression estimate.
+\end{enumerate}
+
+
+\section{Coding and data analysis exercises}
+\begin{enumerate}
+	\item Consider the sleep data from the previous homework.
+	\begin{enumerate}[A.]
+ 		\item Consider the model fit from the previous homework. Write a program to grab the hat diagnals as well as use R's lm to obtain them directly. 
+ 			Look at the influence of various data points.
+		\item Consider the model fit from the previous homework. Write a program to grab the residuals and Press residuals. Investigate these residuals
+	   in the context of this model.
+   \end{enumerate}
+   \item Consider the baseball data from the previous exercise.
+	\begin{enumerate}[A.]
+		\item Consider the model fit from the previous homework. Write a program to grab the hat diagnals as well as use R's lm to obtain them directly. 
+		Look at the influence of various data points.
+		\item Consider the model fit from the previous homework. Write a program to grab the residuals and Press residuals. Investigate these residuals
+		in the context of this model.
+	\end{enumerate}
+	\item Write a function that takes a $Y$ ($n\times 1$) an $X_1$ ($n \times 1$) and an $X_2$ ($n \times (p-1)$) and produces the partial regression
+		plot of $e_{Y | X_2}$ by $e_{Y | X_2}$.
+	 \item Write an R function that takes in an arbitrary 2 dimensional $K$ matrix and creates and plots the relevant confidence ellipse.
+	 \item Take the \texttt{diamond} dataset and create a function that creates and plots confidence ellipsoids for pairs of predictions.
+\end{enumerate}
 \end{document}
 
 

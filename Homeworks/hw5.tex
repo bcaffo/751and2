@@ -12,6 +12,34 @@
 \begin{document}
 \noindent
 {\bf BST 140.752 \\ Problem Set 5} \\
+
+\section{LMM}
+\begin{enumerate}
+\item Let $Y_{ij} = \mu + u_i + \epsilon_{ij}$ for $u_i \sim N(0,\sigma^2_u)$ and $\epsilon_{ij} \sim N(0, \sigma^2)$. Calculate the BLUP 
+for $u_i$
+\item Let $Y = X \beta + Z u + \epsilon$ for $u \sim N(0,\Sigma_u)$ and $\epsilon \sim N(0, \sigma^2 I)$. Calculate the BLUP for $u$. 
+\item Load the Rail data set in R. Fit a mixed model of the form from question 1. Compare a the estimates of the mean for each rail with the empirical mean.	
+\item Load the pixel data set in R. Fit a linear mixed effect model where you have $Y_{ijk} = \beta_0 + \beta_1 x_{k} + u_{i} + u_{ij} + \epsilon_{ijk}$
+where $Y_{ijk}$ is pixel, $i$ is dog, $j$ is side and $k$ is day index and $x_k$ is day. Fit the model and interpret the results.
+\item Consider the model $Y_{i} = \mu + \epsilon_{ij}$. Consider putting a so-called "flat" prior on $\mu$. That is acting like a distribution
+that is $1$ from $-\infty$ to $+\infty$ is a valid density. Calculate the distribution marginalized over $\mu$ and show that it is the same likelihood
+used to obtain the REML estimates.
+\item Derive the BLUP estimates for a linear mixed effect model of the 
+form $Y = X\beta + Z U + \epsilon$ where $U \sim N(0, \Sigma_u)$
+and $\epsilon \sim N(0, \sigma^2 I)$ and 
+assuming known variance components. 
+\item Find the BLUPs for the Rail data set in R. Compare the BLUP estimates
+with those obtained using a fixed effect estimate for the $U_i$.
+\item Consider the model from Question 1. Show that the estimate for 
+$\sigma^2$ is not consistent as $i \rightarrow \infty$ for equal
+numbers of observations per cluster. 
+
+\end{enumerate}
+
+
+
+\end{document}
+
 \section{Residuals}
 \begin{enumerate}
 \item Go through the argument that the propensity score is a balancing score and fill in the details of the proof.

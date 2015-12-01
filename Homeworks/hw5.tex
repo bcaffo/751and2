@@ -33,9 +33,35 @@ with those obtained using a fixed effect estimate for the $U_i$.
 \item Consider the model from Question 1. Show that the estimate for 
 $\sigma^2$ is not consistent as $i \rightarrow \infty$ for equal
 numbers of observations per cluster. 
-
 \end{enumerate}
 
+\section{Bayesian models}
+\begin{enumerate}
+\item Let $Y ~|~ \mu, \theta \sim N(\mu J_{n}, \theta^{-1} I)$ be an $n\times 1$ vector. Further
+let $\mu ~|~ \theta \sim N(\mu_0 \theta^{-1}, \sigma^2_0)$ and $\theta \sim \mbox{Gamma}(\alpha_0, \beta_0)$.
+Derive the joint posterior distribution for $\mu$ and $\theta$ as well as the marginal posterior distribution 
+for $\mu$ and $\theta$.
+\item Let $p$ denote the unknown proportion of rocks in a riverbed that are
+sedimentary in type. Suppose that $X = 12$ of a sample of $n = 20$ rocks collected in
+random locations are found to be sedimentary in type. Display the Bayes interval for 
+a uniform and Jeffrey's prior. Give 95\% HPD and equi-tail intervals for both.
+\item A cohort study was performed to evaluate the relation between oral-contraceptive
+use and breast cancer in the age group 40-44. At enrollment, women were classified
+as current users, past users or never users of oral contraceptives. Current users had 13 cancer
+cases out of 4,671 person years while never users 113 cancer cases out of 98,091 years.
+Assume that cancer counts given $t$ person years is Poisson($\lambda t$) where $\lambda$
+is the incidence rate. Assume independent Gamma priors for the incident rate for the never
+and current users and create the following (trying different values for the hyper-parameters):
+\begin{enumerate}[a.]
+\item The posterior for the incidence rate for the never users.
+\item The posterior for the incidence rate for the current users.
+\item The posterior for the relative rate comparing the never to current users.
+\item Give 95\% equi-tail credible intervals for all three above.
+\end{enumerate}
+\item Take the \texttt{mtcars} dataset. Fit a Bayesian regression model with 
+\texttt{mpg} as the outcome and \texttt{wt} as the predictor. Display the posterior
+for the slope, intercept and residual variance. Assume a normal/gamma prior.
+\end{enumerate}
 
 
 \end{document}

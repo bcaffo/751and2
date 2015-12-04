@@ -33,12 +33,30 @@ with those obtained using a fixed effect estimate for the $U_i$.
 \item Consider the model from Question 1. Show that the estimate for 
 $\sigma^2$ is not consistent as $i \rightarrow \infty$ for equal
 numbers of observations per cluster. 
+
+\end{enumerate}
+
+\section{Smoothing}
+\begin{enumerate}
+\item Let \texttt{seq(0, 6 * pi, length = 1000)}. Simulate a sin wave and do the
+following:
+    \begin{enumerate}[A.]
+        \item Fit a smoother using linear and quadratic regression splines.
+        \item Fit a smoother using bsplines and natural splines.
+        \item Plot the columns of the design matrix for the different bases.
+    \end{enumerate}
+\item Take the \texttt{mtcars} dataset. Fit a penalized spline model using
+\texttt{mgcv} with \texttt{mpg} as the outcome and additive smooth functions
+of weight and horsepower. Visualize the fits.
+\item Show that the function 
+$\sum_{k=0}^p \beta_k x^k + \sum_{k=1}^K \gamma_k (x - \xi_k)_+^p$ 
+has $p-1$ derivatives for $p>1$. 
 \end{enumerate}
 
 \section{Bayesian models}
 \begin{enumerate}
 \item Let $Y ~|~ \mu, \theta \sim N(\mu J_{n}, \theta^{-1} I)$ be an $n\times 1$ vector. Further
-let $\mu ~|~ \theta \sim N(\mu_0 \theta^{-1}, \sigma^2_0)$ and $\theta \sim \mbox{Gamma}(\alpha_0, \beta_0)$.
+let $\mu ~|~ \theta \sim N(\mu_0 , \theta^{-1} \sigma^2_0)$ and $\theta \sim \mbox{Gamma}(\alpha_0, \beta_0)$.
 Derive the joint posterior distribution for $\mu$ and $\theta$ as well as the marginal posterior distribution 
 for $\mu$ and $\theta$.
 \item Let $p$ denote the unknown proportion of rocks in a riverbed that are
